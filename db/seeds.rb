@@ -8,6 +8,9 @@
 
 require 'faker'
 
+Tool.destroy_all
+User.destroy_all
+
 10.times do
   user = User.new(
     username: Faker::Internet.username,
