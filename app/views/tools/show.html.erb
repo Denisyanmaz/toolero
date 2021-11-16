@@ -1,3 +1,6 @@
-<h2><%= @tool.name | @tool.tool_type (@tool.price) %></h2>
+<h2><%= @tool.name%> | <%=@tool.tool_type%> (<%= @tool.price %>€)</h2>
 <p><%= @tool.description %></p>
 <p><%= @tool.availability %></p>
+
+<%= link_to 'Back', tools_path %>
+<%= link_to 'New Tool', new_tool_path %>

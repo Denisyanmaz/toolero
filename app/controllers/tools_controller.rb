@@ -9,7 +9,6 @@ class ToolsController < ApplicationController
 
   def new
     @tool = Tool.new
-    @user = User.find(params[:user_id])
   end
 
   def create
@@ -17,7 +16,7 @@ class ToolsController < ApplicationController
     @tool = Tool.new(strong_params)
     @tool.user = @user
     if @tool.save
-      redirect_to user_path(@user)
+      redirect_to tool_path(@user)
     else
       render :new
     end
@@ -32,7 +31,7 @@ class ToolsController < ApplicationController
   private
 
   def strong_params
-    params.require(:tool).permit(:name, :tool_type, :price, :availability, :description)
+    params.require(:tool).permit(:name, :tool_type, :price, :availability, :description, :user_id)
   end
 
 end
