@@ -10,3 +10,17 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar p {
+  font-size: 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0px 0px 0px 5px;
+}
+
+.navbar-container {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+}

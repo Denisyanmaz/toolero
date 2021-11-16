@@ -1,2 +1,37 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <!-- container storing basic text -->
+  <div class="banner-container">
+    <div class="banner-text">
+      <h1>Looking for a specific tool?</h1>
+      <p>Find the largest selection of tools available in your neighborhood</p>
+    </div>
+  </div>
+  <!-- container storing search bar w/ different user inputs -->
+  <div class="card-container">
+    <div class="card">
+      <label for="location">Your current location</label>
+      <select id="current_location" name="location">
+        <option value="Munich">Munich</option>
+        <option value="Berlin">Berlin</option>
+        <option value="Frankfurt">Frankfurt</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <label for="tool">What are you looking for?</label>
+      <select id="searched_tool" name="tool">
+        <option value="Tool 1">Tool 1</option>
+        <option value="Tool 2">Tool 2</option>
+        <option value="Tool 3">Tool 3</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <p>Calendar</p>
+    </div>
+  </div>
+  <!-- search button that pushes to next action / tools overview page -->
+  <div class="search-button">
+    <a class="btn btn-flat" href="#">SEARCH</a>
+  </div>
+</div>
