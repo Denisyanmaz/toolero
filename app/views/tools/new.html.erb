@@ -1,0 +1,13 @@
+<h1>Add a New Tool:</h1>
+
+<%= simple_form_for(@tool) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :tool_type %>
+    <%= f.input :price %>
+    <%= f.input :availability %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+  </div>
+
+
+<%= link_to 'Back', tools_path %>
