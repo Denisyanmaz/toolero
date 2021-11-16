@@ -1,4 +1,6 @@
 class ToolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
     @tools = Tool.all
   end
@@ -12,11 +14,10 @@ class ToolsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
     @tool = Tool.new(strong_params)
-    @tool.user = @user
+    @tool.user = current_user
     if @tool.save
-      redirect_to tool_path(@user)
+      redirect_to tool_path(@tool)
     else
       render :new
     end
