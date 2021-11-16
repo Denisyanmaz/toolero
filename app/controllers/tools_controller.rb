@@ -1,4 +1,6 @@
 class ToolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
     @tools = Tool.all
   end
@@ -9,15 +11,13 @@ class ToolsController < ApplicationController
 
   def new
     @tool = Tool.new
-    @user = User.find(params[:user_id])
   end
 
   def create
-    @user = User.find(params[:user_id])
     @tool = Tool.new(strong_params)
-    @tool.user = @user
+    @tool.user = current_user
     if @tool.save
-      redirect_to user_path(@user)
+      redirect_to tool_path(@tool)
     else
       render :new
     end
@@ -32,7 +32,7 @@ class ToolsController < ApplicationController
   private
 
   def strong_params
-    params.require(:tool).permit(:name, :tool_type, :price, :availability, :description)
+    params.require(:tool).permit(:name, :tool_type, :price, :availability, :description, :user_id)
   end
 
 end
