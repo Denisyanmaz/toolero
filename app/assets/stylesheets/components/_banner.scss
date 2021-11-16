@@ -1,0 +1,21 @@
+.banner {
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("tools.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 400px;
+  width: auto;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  position: relative;
+  padding-top: 50px;
+}
+
+.banner-text {
+  color: black;
+}

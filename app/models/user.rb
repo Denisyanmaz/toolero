@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :tools
   has_many :reservations
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :address, presence: true
-  validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :password, presence: true
 end
