@@ -1,5 +1,8 @@
-<ul>
-  <% @tools.each do |tool| %>
-    <li> <%= link_to tool.name, tool_path(tool) %></li>
-  <% end %>
-</ul>
+<div class="container" background-color="none">
+  <div class="cards">
+    <% @tools.each do |tool| %>
+      <div class="card-category" > <%= link_to "#{tool.name} | #{tool.tool_type}", tool_path(tool), class:"name-link"%>
+      </div>
+    <% end %>
+  </div>
+</div>
