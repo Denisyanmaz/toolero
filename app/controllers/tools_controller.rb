@@ -7,6 +7,7 @@ class ToolsController < ApplicationController
 
   def show
     @tool = Tool.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new

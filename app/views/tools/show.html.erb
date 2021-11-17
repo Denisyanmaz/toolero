@@ -1,6 +1,14 @@
-<h2><%= @tool.name%> | <%=@tool.tool_type%> (<%= @tool.price %>€)</h2>
-<p><%= @tool.description %></p>
-<p><%= @tool.availability %></p>
-
-<%= link_to 'Back', tools_path %>
-<%= link_to 'New Tool', new_tool_path %>
+<div class="container">
+  <h2><%= @tool.name%> | <%=@tool.tool_type%></h2>
+  <h4>Costs per Day: <%= @tool.price %>€</h4>
+  <p>Tool Description: <%= @tool.description %></p>
+  <p>Select the date of your reservation:</p>
+  <%= simple_form_for([@tool, @reservation]) do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.button :submit, class: 'btn btn-primary'  %>
+      <% end  %>
+      <br>
+      <br>
+  <button type="button" class="btn btn-light"><%= link_to 'Back to overview', tools_path %></button>
+</div>
