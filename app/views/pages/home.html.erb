@@ -10,7 +10,7 @@
   <div class="card-container">
     <div class="card">
       <label for="location">Your current location</label>
-      <select id="current_location" name="location">
+      <select class="form-group" id="current_location" name="location">
         <option value="Munich">Munich</option>
         <option value="Berlin">Berlin</option>
         <option value="Frankfurt">Frankfurt</option>
@@ -19,7 +19,7 @@
 
     <div class="card">
       <label for="tool">What are you looking for?</label>
-      <select id="searched_tool" name="tool">
+      <select class="form-group" id="searched_tool" name="tool">
         <option value="Tool 1">Tool 1</option>
         <option value="Tool 2">Tool 2</option>
         <option value="Tool 3">Tool 3</option>
@@ -27,11 +27,15 @@
     </div>
 
     <div class="card">
-      <p>Calendar</p>
+      <label for="calendar">Check availabilities (from / to)</label>
+      <div class="form-group" id="datepicker">
+        <input type="date" name="from" />
+        <input type="date" name="to" />
+      </div>
     </div>
   </div>
   <!-- search button that pushes to next action / tools overview page -->
   <div class="search-button">
-    <a class="btn btn-flat" href="#">SEARCH</a>
+    <a class="btn btn-flat" href="/tools">SEARCH</a>
   </div>
 </div>
