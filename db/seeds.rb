@@ -8,6 +8,7 @@
 
 require 'faker'
 
+Reservation.destroy_all
 Tool.destroy_all
 User.destroy_all
 
@@ -21,10 +22,10 @@ User.destroy_all
   user.save!
   (1..5).to_a.sample.times do
     tool = Tool.new(
-      name: Faker::Name.first_name,
-      tool_type: Faker::Name.middle_name,
+      name: ["Gedore", "Halder", "Picard", "Bosch", "Hazet", "Festool", "Metabo", "Fein", "Eibenstock"].sample,
+      tool_type: ["Hammer", "Drill", "Ratchet", "Wrench", "Screw drivers", "Lawn Mower", "Chainsaw"].sample,
       price: Faker::Number.within(range: 1..15),
-      description: Faker::Lorem.sentence(word_count: 6),
+      description: Faker::Lorem.sentence(word_count: 20),
       availability: true,
       user: user
     )
