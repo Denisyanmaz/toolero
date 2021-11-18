@@ -33,7 +33,7 @@ class ToolsController < ApplicationController
   private
 
   def strong_params
-    params.require(:tool).permit(:name, :tool_type, :price, :availability, :description, :user_id)
+    params.require(:tool).permit(:name, :tool_type, :price, :availability, :description, :user_id, :photo)
   end
 
 end
