@@ -3,7 +3,9 @@ class ToolsController < ApplicationController
 
   def index
     if params[:query].present?
-      @tools = Tool.search_by_name_and_tool_type(params[:query])
+      start_date = Date.parse(params[:from])
+      end_date = Date.parse(params[:to])
+      @tools = Tool.search_by_name_and_tool_type(params[:query]).to_a.reject { |tool| tool.reservations?(start_date, end_date) }
     else
       @tools = Tool.all
     end
