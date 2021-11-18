@@ -3,7 +3,7 @@ class ToolsController < ApplicationController
 
   def index
     if params[:query].present?
-      @tools = Tool.global_search(params[:query])
+      @tools = Tool.search_by_name_and_tool_type(params[:query])
     else
       @tools = Tool.all
     end
