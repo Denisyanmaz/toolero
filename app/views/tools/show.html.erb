@@ -5,21 +5,21 @@
       </div>
     </div>
     <div class="content">
-      <div class="details">
+      <div class="details card show-page-card">
           <p > <strong><%=@tool.tool_type%></strong> Brand:<%=@tool.name%></p>
           <p>Costs per Day: <%= @tool.price %>€</p>
           <p>Tool Description: <%= @tool.description %></p>
+      <div>
+        <button type="button" class="btn btn-ghost no-1"><%= link_to 'Back to overview', tools_path %></button>
       </div>
-      <div class="calendar card">
+      </div>
+      <div class="calendar card show-page-card">
           <p>Select the date of your reservation:</p>
           <%= simple_form_for([@tool, @reservation]) do |f| %>
               <%= f.input :start_date %>
               <%= f.input :end_date %>
-              <%= f.button :submit, class: 'btn btn-primary'  %>
+              <%= f.button :submit, class: "btn btn-ghost" %>
               <% end  %>
       </div>
-    </div>
-    <div>
-      <button type="button" class="btn btn-light"><%= link_to 'Back to overview', tools_path %></button>
     </div>
 </div>
