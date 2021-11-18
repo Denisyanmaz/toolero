@@ -1,3 +1,20 @@
+<div class="container">
+  <h1 class="text-center">Tools</h1>
+  <div class="row justify-content-center flex-row">
+    <%= form_tag tools_path, method: :get do %>
+      <div class="d-flex">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a tool"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+
 <div class="container" background-color="none">
   <div class="cards">
     <% @tools.each do |tool| %>
