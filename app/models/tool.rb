@@ -1,6 +1,7 @@
 class Tool < ApplicationRecord
   belongs_to :user
   has_many :reservations
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :tool_type, presence: true

@@ -1,7 +1,7 @@
 <div class="container" background-color="none">
   <div class="cards">
     <% @tools.each do |tool| %>
-      <div class="card-category" > <%= link_to "#{tool.name} | #{tool.tool_type}", tool_path(tool), class:"name-link"%>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tool.photo.attached? ? cl_image_path(tool.photo.key) : asset_path('hammer.jpeg')%>)"<%= link_to "#{tool.name} | #{tool.tool_type}", tool_path(tool), class:"name-link"%>>
       </div>
     <% end %>
   </div>
