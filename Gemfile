@@ -33,6 +33,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'faker'
+gem "geocoder"
 
 # Image Upload
 gem 'cloudinary', '~> 1.16.0'
