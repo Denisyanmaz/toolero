@@ -1,17 +1,44 @@
 <div class="container">
-  <h1 class="text-center">Tools</h1>
-  <div class="row justify-content-center flex-row">
-    <%= form_tag tools_path, method: :get do %>
-      <div class="d-flex">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a tool"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      </div>
-    <% end %>
+<div class="card-index">
+  <div class="card">
+    <label for="tool">What are you looking for?</p>
+      <%= form_tag tools_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-group",
+            placeholder: "Find a tool"
+          %>
   </div>
+  <div class="card">
+      <label for="from">Starting date</p>
+            <%= date_field_tag :from,
+              params[:from],
+              class: "form-group",
+              placeholder: "From"
+            %>
+  </div>
+  <div class="card">
+        <label for="to">End date</p>
+            <%= date_field_tag :to,
+              params[:to],
+              class: "form-group",
+              placeholder: "to"
+            %>
+  </div>
+  </div>
+      <!--  <div class="card">
+              <label for="calendar">Check availabilities (from / to)</label>
+              <div class="form-group" id="datepicker">
+                <input type="date" name="from" />
+                <input type="date" name="to" />
+              </div>
+            </div> -->
+<div class="card-index">
+        <div class="search-button">
+          <%= submit_tag "Search", class: "btn btn-flat" %>
+        </div>
+    <% end %>
+</div>
 </div>
 <br>
 
