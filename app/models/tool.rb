@@ -15,7 +15,7 @@ class Tool < ApplicationRecord
   validates :tool_type, presence: true
   validates :price, presence: true
   validates :availability, presence: true
-  validates :description, presence: true, length: { minimum: 20, maximum: 200 }
+  validates :description, presence: true, length: { minimum: 20, maximum: 600 }
 
   def reservations?(start_date, end_date)
     reservations.where(
