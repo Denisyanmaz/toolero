@@ -9,11 +9,15 @@ class ToolsController < ApplicationController
     else
       @tools = Tool.all
     end
-    @users = User.all
+    @users = @tools.map do |tool|
+      User.find(tool.user_id)
+    end
+    @users = User.where(id: @users.pluck(:id))
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude
+        lng: user.longitude,
+        image_url: helpers.asset_url("icon.png")
       }
     end
   end
