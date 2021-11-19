@@ -16,6 +16,9 @@ export default class extends Controller {
     });
     this._addMarkersToMap();
     this._fitMapToMarkers();
+    setTimeout(() => {
+      this.map.resize();
+    }, 200);
   }
 
   _addMarkersToMap() {
