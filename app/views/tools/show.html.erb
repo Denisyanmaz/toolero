@@ -1,12 +1,11 @@
 <div class="container show" >
-    <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @tool.photo.key, height: 300, width: 400, crop: :fill%>');">
-      <div class="container">
-        <h1 class="showpage-heading"><%= @tool.tool_type%></h1>
-      </div>
+    <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @tool.photo.attached? ? cl_image_path(@tool.photo.key) : asset_path('hammer.jpeg')%>);">
+        <h1><%= @tool.tool_type%></h1>
     </div>
     <div class="content">
       <div class="details card show-page-card">
-          <p > <strong><%=@tool.tool_type%></strong> Brand:<%=@tool.name%></p>
+          <h2 > <strong><%=@tool.tool_type%></strong></h2>
+          <p>Brand: <%=@tool.name%></p>
           <p>Costs per Day: <%= @tool.price %>€</p>
           <p>Tool Description: <%= @tool.description %></p>
       <div>
