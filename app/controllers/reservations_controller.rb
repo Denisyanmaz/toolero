@@ -10,7 +10,6 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.tool = @tool
     if @reservation.save
-      @tool.availability = false
       redirect_to reservation_path(@reservation)
     else
       render "/tools/show"
