@@ -16,3 +16,15 @@
 .form-group {
   height: 28px !important;
 }
+
+.card-index {
+  background-position: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: black;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0px 5px 0px 5px;
+}

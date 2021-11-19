@@ -18,25 +18,39 @@
     </div>
 
     <div class="card">
-      <label for="tool">What are you looking for?</label>
-      <select class="form-group" id="searched_tool" name="tool">
-        <option value="Tool 1">hammer</option>
-        <option value="Tool 2">chain saw</option>
-        <option value="Tool 3">power drill</option>
-        <option value="Tool 4">lawnmower</option>
-      </select>
-    </div>
+      <label for="tool">What are you looking for?</h1>
+      <div class="card">
+        <%= form_tag tools_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-group",
+              placeholder: "Find a tool"
+            %>
+            <%= date_field_tag :from,
+              params[:from],
+              class: "form-group",
+              placeholder: "From"
+            %>
+            <%= date_field_tag :to,
+              params[:to],
+              class: "form-group",
+              placeholder: "to"
+            %>
 
-    <div class="card">
-      <label for="calendar">Check availabilities (from / to)</label>
-      <div class="form-group" id="datepicker">
-        <input type="date" name="from" />
-        <input type="date" name="to" />
+      <!--  <div class="card">
+              <label for="calendar">Check availabilities (from / to)</label>
+              <div class="form-group" id="datepicker">
+                <input type="date" name="from" />
+                <input type="date" name="to" />
+              </div>
+            </div> -->
+            <div class="search-button">
+              <%= submit_tag "Search", class: "btn btn-flat" %>
+            </div>
+        <% end %>
       </div>
     </div>
+
   </div>
   <!-- search button that pushes to next action / tools overview page -->
-  <div class="search-button">
-    <a class="btn btn-flat" href="/tools">SEARCH</a>
-  </div>
 </div>

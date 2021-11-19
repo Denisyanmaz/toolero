@@ -2,7 +2,13 @@ class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @tools = Tool.all
+    if params[:query].present?
+      start_date = Date.parse(params[:from])
+      end_date = Date.parse(params[:to])
+      @tools = Tool.search_by_name_and_tool_type(params[:query]).to_a.reject { |tool| tool.reservations?(start_date, end_date) }
+    else
+      @tools = Tool.all
+    end
     @users = User.all
     @markers = @users.geocoded.map do |user|
       {
