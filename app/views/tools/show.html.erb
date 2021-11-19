@@ -1,14 +1,25 @@
-<div class="container">
-  <h2><%= @tool.name%> | <%=@tool.tool_type%></h2>
-  <h4>Costs per Day: <%= @tool.price %>€</h4>
-  <p>Tool Description: <%= @tool.description %></p>
-  <p>Select the date of your reservation:</p>
-  <%= simple_form_for([@tool, @reservation]) do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.button :submit, class: 'btn btn-primary'  %>
-      <% end  %>
-      <br>
-      <br>
-  <button type="button" class="btn btn-light"><%= link_to 'Back to overview', tools_path %></button>
+<div class="container show" >
+    <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @tool.photo.key, height: 300, width: 400, crop: :fill%>');">
+      <div class="container">
+        <h1 class="showpage-heading"><%= @tool.tool_type%></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="details card show-page-card">
+          <p > <strong><%=@tool.tool_type%></strong> Brand:<%=@tool.name%></p>
+          <p>Costs per Day: <%= @tool.price %>€</p>
+          <p>Tool Description: <%= @tool.description %></p>
+      <div>
+        <button type="button" class="btn btn-ghost no-1"><%= link_to 'Back to overview', tools_path %></button>
+      </div>
+      </div>
+      <div class="calendar card show-page-card">
+          <p>Select the date of your reservation:</p>
+          <%= simple_form_for([@tool, @reservation]) do |f| %>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.button :submit, class: "btn btn-ghost" %>
+              <% end  %>
+      </div>
+    </div>
 </div>

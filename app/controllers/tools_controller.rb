@@ -9,6 +9,13 @@ class ToolsController < ApplicationController
     else
       @tools = Tool.all
     end
+    @users = User.all
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def show
@@ -39,7 +46,7 @@ class ToolsController < ApplicationController
   private
 
   def strong_params
-    params.require(:tool).permit(:name, :tool_type, :price, :availability, :description, :user_id)
+    params.require(:tool).permit(:name, :tool_type, :price, :availability, :description, :user_id, :photo)
   end
 
 end
