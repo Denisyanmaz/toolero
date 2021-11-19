@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'open-uri'
 
 Reservation.destroy_all
 Tool.destroy_all
@@ -45,6 +46,9 @@ end
       availability: true,
       user: users[0]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332832/collinshammer_agdghh.jpg"
+    file = URI.open(url)
+    tool1.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool1.save!
 
     tool2 = Tool.new(
@@ -55,6 +59,9 @@ end
       availability: true,
       user: users[1]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332832/hammerestwing_l9vunm.jpg"
+    file = URI.open(url)
+    tool2.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool2.save!
 
     tool3 = Tool.new(
@@ -65,6 +72,9 @@ end
       availability: true,
       user: users[2]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332832/chainsawbosch_epbokb.jpg"
+    file = URI.open(url)
+    tool3.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool3.save!
 
     tool4 = Tool.new(
@@ -75,6 +85,9 @@ end
       availability: true,
       user: users[3]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332833/makitadrilldriver_do5nzm.jpg"
+    file = URI.open(url)
+    tool4.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool4.save!
 
     tool5 = Tool.new(
@@ -85,6 +98,9 @@ end
       availability: true,
       user: users[4]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332832/circularsaw_rlmey1.jpg"
+    file = URI.open(url)
+    tool5.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool5.save!
 
     tool6 = Tool.new(
@@ -95,6 +111,9 @@ end
       availability: true,
       user: users[5]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332833/jigsaw_ftovy3.jpg"
+    file = URI.open(url)
+    tool6.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool6.save!
 
     tool7 = Tool.new(
@@ -105,6 +124,9 @@ end
       availability: true,
       user: users[6]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332832/boschdrilldriver_fugugd.jpg"
+    file = URI.open(url)
+    tool7.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool7.save!
 
     tool8 = Tool.new(
@@ -115,6 +137,9 @@ end
       availability: true,
       user: users[7]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332832/lawn-mower-tractor_hjchnn.jpg"
+    file = URI.open(url)
+    tool8.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool8.save!
 
     tool9 = Tool.new(
@@ -125,6 +150,9 @@ end
       availability: true,
       user: users[8]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332833/tool9_vshjmv.jpg"
+    file = URI.open(url)
+    tool9.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool9.save!
 
     tool10 = Tool.new(
@@ -135,6 +163,9 @@ end
       availability: true,
       user: users[9]
     )
+    url = "https://res.cloudinary.com/dhr7binhu/image/upload/v1637332833/tool10_njmwnk.jpg"
+    file = URI.open(url)
+    tool10.photo.attach(io: file, filename: 'tool.png', content_type: 'image/png')
     tool10.save!
 
 
