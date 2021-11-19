@@ -50,7 +50,7 @@
         <div class="card-product-infos d-flex justify-content-between">
           <div>
             <% user = User.find(tool.user_id) %>
-            <h2>Type: <%=tool.tool_type%></h2>
+            <h2><%= link_to "Type: #{tool.tool_type}", tool_path(tool), class:"name-link"%></h2>
             <p>Brand: <%= tool.name%></p>
             <p>Address: <%= user.address %></p>
           </div>
