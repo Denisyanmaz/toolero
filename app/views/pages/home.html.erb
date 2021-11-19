@@ -7,36 +7,34 @@
     </div>
   </div>
   <!-- container storing search bar w/ different user inputs -->
-  <div class="card-container">
-    <div class="card">
-      <label for="location">Your current location</label>
-      <select class="form-group" id="current_location" name="location">
-        <option value="Munich">Munich</option>
-        <option value="Berlin">Berlin</option>
-        <option value="Frankfurt">Frankfurt</option>
-      </select>
-    </div>
-
-    <div class="card">
-      <label for="tool">What are you looking for?</h1>
-      <div class="card">
-        <%= form_tag tools_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-group",
-              placeholder: "Find a tool"
-            %>
+<div class="container">
+<div class="card-index">
+  <div class="card">
+    <label for="tool">What are you looking for?</p>
+      <%= form_tag tools_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-group",
+            placeholder: "Find a tool"
+          %>
+  </div>
+  <div class="card">
+      <label for="from">Starting date</p>
             <%= date_field_tag :from,
               params[:from],
               class: "form-group",
               placeholder: "From"
             %>
+  </div>
+  <div class="card">
+        <label for="to">End date</p>
             <%= date_field_tag :to,
               params[:to],
               class: "form-group",
               placeholder: "to"
             %>
-
+  </div>
+  </div>
       <!--  <div class="card">
               <label for="calendar">Check availabilities (from / to)</label>
               <div class="form-group" id="datepicker">
@@ -44,13 +42,12 @@
                 <input type="date" name="to" />
               </div>
             </div> -->
-            <div class="search-button">
-              <%= submit_tag "Search", class: "btn btn-flat" %>
-            </div>
-        <% end %>
-      </div>
-    </div>
-
-  </div>
+<div class="card-index">
+        <div class="search-button">
+          <%= submit_tag "Search", class: "btn btn-flat" %>
+        </div>
+    <% end %>
+</div>
+</div>
   <!-- search button that pushes to next action / tools overview page -->
 </div>
